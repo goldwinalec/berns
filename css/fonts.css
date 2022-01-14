@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Exo2-LightItalic';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Exo2-LightItalic.woff2") format("woff2"), url("/fonts/Exo2-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-Light';
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/Exo2-Light.woff2") format("woff2"), url("/fonts/Exo2-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-Regular';
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Exo2-Regular.woff2") format("woff2"), url("/fonts/Exo2-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-Italic';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Exo2-Italic.woff2") format("woff2"), url("/fonts/Exo2-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-SemiBold';
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Exo2-SemiBold.woff2") format("woff2"), url("/fonts/Exo2-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-Bold';
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Exo2-Bold.woff2") format("woff2"), url("/fonts/Exo2-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Exo2-ExtraBold';
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Exo2-ExtraBold.woff2") format("woff2"), url("/fonts/Exo2-ExtraBold.woff") format("woff");
+}

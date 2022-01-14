@@ -36,4 +36,18 @@ p {
   padding: 0;
 }
 
+.gallery-2__line img {
+  animation: marquee 50s infinite linear;
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
 @import 'media';

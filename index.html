@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.gif" type="image/gif" />
     <meta
       name="description"
       content="Анна Бернс — эротический и фэшн-фотограф из Москвы. Я создаю красивый и интересный образ, который поражает! Люблю стильные видео и вкусные фильмы! Имею художественное и кинематографическое образование."
@@ -14,8 +15,16 @@
   </head>
   <body>
     <header class="header">
-      <a href="#about" class="header__link">О себе</a>
-      <a href="#contacts" class="header__link">Контакты</a>
+      <a href="#about" class="header__link">
+        <span class="header__link-1">О себе</span>
+        <span class="header__link-2">О себе</span>
+        <span class="header__link-3">О себе</span>
+      </a>
+      <a href="#contacts" class="header__link">
+        <span class="header__link-1">Контакты</span>
+        <span class="header__link-2">Контакты</span>
+        <span class="header__link-3">Контакты</span>
+      </a>
     </header>
     <main class="main">
       <section class="hero">
@@ -27,17 +36,13 @@
               class="hero__img"
               width="709"
             />
-            <button class="hero__play-btn">
-              <img src="/images/icons/play-btn.svg" alt="" />
-            </button>
+            <a class="hero__play-btn" href="#"></a>
           </div>
           <div class="hero__title-wrapper">
             <h1 class="hero__title">
-              Привет, я Анна Бернс фотограф эротики и моды
+              Привет, я Анна Бернс <br />фотограф эротики и моды
             </h1>
-            <button class="hero__play-btn">
-              <img src="/images/icons/down-btn.svg" alt="" />
-            </button>
+            <a class="hero__down-btn" href="#gallery-1"></a>
           </div>
         </div>
         <div class="hero__bottom-inner">
@@ -45,7 +50,7 @@
           <a href="#" class="hero__link">EN</a>
         </div>
       </section>
-      <section class="gallery-1">
+      <section class="gallery-1" id="gallery-1">
         <div class="container">
           <img
             class="gallery-1__img"

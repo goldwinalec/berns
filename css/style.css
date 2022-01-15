@@ -646,6 +646,10 @@ p {
           transform: rotate(-8deg) translateY(120px);
 }
 
+.contacts {
+  padding-bottom: 46px;
+}
+
 .contacts__container {
   max-width: 1552px;
   margin: 0 auto;

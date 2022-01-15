@@ -174,11 +174,6 @@ p {
   margin: 0 auto;
 }
 
-.gallery-2__line img {
-  -webkit-animation: marquee 50s infinite linear;
-          animation: marquee 50s infinite linear;
-}
-
 .hero__img-wrapper {
   position: relative;
 }
@@ -246,6 +241,91 @@ p {
 
 .hero__link {
   margin-left: 10px;
+}
+
+.gallery-1 {
+  margin-top: 18px;
+}
+
+.gallery-1__img {
+  display: block;
+}
+
+.gallery-1__container {
+  max-width: 93%;
+}
+
+.gallery-1__img--1 {
+  margin-right: 54px;
+  margin-left: auto;
+}
+
+.gallery-1__img--2 {
+  margin-top: -270px;
+  margin-left: 12%;
+}
+
+.gallery-1__img--3 {
+  margin-top: 121px;
+  margin-right: 185px;
+  margin-left: auto;
+}
+
+.gallery-1__img--4 {
+  margin-top: -161px;
+}
+
+.gallery-1__video-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 158px;
+}
+
+.gallery-1__video-img {
+  display: block;
+  z-index: 1;
+}
+
+.gallery-1__video-btn {
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.gallery-1__img--5 {
+  margin-top: 237px;
+  margin-left: 98px;
+}
+
+.gallery-1__img--6 {
+  margin-left: auto;
+  margin-top: -368px;
+  margin-right: 82px;
+}
+
+.gallery-1__img--7 {
+  margin: 292px auto 0;
+}
+
+.gallery-2 {
+  margin-top: -374px;
+  padding: 491px;
+  background-color: #fff;
+  color: #111111;
+}
+
+.gallery-2__line img {
+  -webkit-animation: marquee 50s infinite linear;
+          animation: marquee 50s infinite linear;
 }
 
 @-webkit-keyframes marquee {

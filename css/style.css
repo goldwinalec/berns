@@ -247,32 +247,49 @@ p {
   margin-top: 18px;
 }
 
-.gallery-1__img {
-  display: block;
-}
-
 .gallery-1__container {
   max-width: 93%;
+}
+
+.gallery-1__img img {
+  display: block;
 }
 
 .gallery-1__img--1 {
   margin-right: 54px;
   margin-left: auto;
+  width: 442px;
 }
 
 .gallery-1__img--2 {
+  position: relative;
   margin-top: -270px;
   margin-left: 12%;
+  width: 462px;
+}
+
+.gallery-1__img--2::after {
+  position: absolute;
+  top: -119px;
+  right: -134px;
+  content: '';
+  width: 235px;
+  height: 202px;
+  background-image: url("/images/icons/eye.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .gallery-1__img--3 {
   margin-top: 121px;
   margin-right: 185px;
   margin-left: auto;
+  width: 442px;
 }
 
 .gallery-1__img--4 {
   margin-top: -161px;
+  width: 716px;
 }
 
 .gallery-1__video-wrapper {
@@ -304,16 +321,20 @@ p {
 .gallery-1__img--5 {
   margin-top: 237px;
   margin-left: 98px;
+  width: 474px;
 }
 
 .gallery-1__img--6 {
   margin-left: auto;
   margin-top: -368px;
   margin-right: 82px;
+  width: 589px;
 }
 
 .gallery-1__img--7 {
+  position: relative;
   margin: 292px auto 0;
+  width: 1001px;
 }
 
 .gallery-2 {
@@ -321,6 +342,18 @@ p {
   padding: 491px;
   background-color: #fff;
   color: #111111;
+}
+
+.gallery-1__img--7::after {
+  position: absolute;
+  top: 179px;
+  right: -170px;
+  content: '';
+  width: 193px;
+  height: 209px;
+  background-image: url("/images/icons/choker.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .gallery-2__line img {

@@ -277,7 +277,7 @@ p {
   transform: rotate(6deg);
 }
 .gallery-3__line--red {
-  margin-top: 230px;
+  margin-top: 300px;
   background: url('/images/icons/red-line.jpg') repeat-x;
   animation: ani 60s linear infinite;
   transform: rotate(-8deg);
@@ -387,5 +387,40 @@ p {
   max-width: 1426px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.about__title {
+  font-size: 60px;
+  line-height: 1;
+  text-align: right;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.about__descr {
+  margin-top: 18px;
+  @extend %exo2-light;
+  font-size: 40px;
+  line-height: 1;
+  text-align: right;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.about__text {
+  margin-top: 66px;
+  @extend %exo2-light;
+  font-size: 40px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.about__text--lines {
+  max-width: 1337px;
+  margin-top: 108px;
+  @extend %exo2-lightit;
+  text-transform: initial;
+  font-size: 40px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 1.4px;
 }
 @import 'media';

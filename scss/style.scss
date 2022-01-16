@@ -177,7 +177,7 @@ p {
   transition: filter 0.3s ease;
   cursor: pointer;
 }
-.gallery__img:hover img:first-child {
+.gallery__img img:first-child:hover {
   filter: invert(100%);
 }
 .gallery-1__img--1 {

@@ -59,13 +59,13 @@ p {
   display: block;
 }
 .header__link-1 {
-  animation: header-1 1s linear;
+  animation: header-1 0.7s ease;
 }
 .header__link-2 {
-  animation: header-2 1s linear;
+  animation: header-2 0.7s ease;
 }
 .header__link-3 {
-  animation: header-3 1s linear;
+  animation: header-3 0.7s ease;
 }
 @keyframes header-1 {
   0% {
@@ -307,8 +307,11 @@ p {
   margin-top: -374px;
   padding-top: 491px;
   padding-bottom: 373px;
-  background-color: #fff;
   color: $black;
+  transition: background 1s ease-out;
+}
+.gallery-2--active {
+  background: #fff;
 }
 .text {
   font-size: 152px;

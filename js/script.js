@@ -1,17 +1,24 @@
-// const paths = document.querySelectorAll('.text__line path');
+const observeGallery = function () {
+  const options = {
+    rootMargin: '-50%',
+    threshold: [0, 0],
+  };
 
-// paths.forEach((path) => {
-//   const length = path.getTotalLength();
+  const trueCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      const { target, isIntersecting } = entry;
 
-//   path.style.transition = path.style.WebkitTransition = 'none';
+      if (isIntersecting) {
+        entry.target.classList.add('gallery-2--active');
+      } else {
+        entry.target.classList.remove('gallery-2--active');
+      }
+    });
+  };
+  const observer = new IntersectionObserver(trueCallback, options);
 
-//   path.style.strokeDasharray = length + ' ' + length;
-//   path.style.strokeDashoffset = length;
+  const target = document.querySelector('.gallery-2');
+  observer.observe(target);
+};
 
-//   path.getBoundingClientRect();
-
-//   path.style.transition = path.style.WebkitTransition =
-//     'stroke-dashoffset 5s ease-in-out';
-
-//   path.style.strokeDashoffset = '0';
-// });
+observeGallery();

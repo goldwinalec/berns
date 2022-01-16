@@ -21,4 +21,28 @@ const observeGallery = function () {
   observer.observe(target);
 };
 
+const observeImages = function () {
+  const options = {
+    rootMargin: '10%',
+    threshold: 0.1,
+  };
+
+  const trueCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      const { target, isIntersecting } = entry;
+
+      if (isIntersecting) {
+        entry.target.classList.remove('gallery__img--hidden');
+      }
+    });
+  };
+  const observer = new IntersectionObserver(trueCallback, options);
+
+  const targets = document.querySelectorAll('.gallery__img');
+  targets.forEach((target) => {
+    observer.observe(target);
+  });
+};
+
 observeGallery();
+observeImages();

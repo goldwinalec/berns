@@ -363,6 +363,19 @@ p {
   display: block;
 }
 
+.gallery__img img:first-child {
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery__img:hover img:first-child {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .gallery-1__img--1 {
   margin-right: 54px;
   margin-left: auto;

@@ -173,6 +173,13 @@ p {
 .gallery-1__img img:first-child {
   display: block;
 }
+.gallery__img img:first-child {
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+.gallery__img:hover img:first-child {
+  filter: invert(100%);
+}
 .gallery-1__img--1 {
   margin-right: 54px;
   margin-left: auto;

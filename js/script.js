@@ -33,6 +33,7 @@ const observeImages = function () {
 
       if (isIntersecting) {
         entry.target.classList.remove('gallery__img--hidden');
+        observer.unobserve(entry.target);
       }
     });
   };

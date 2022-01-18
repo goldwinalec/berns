@@ -614,6 +614,10 @@
     height: 35px;
     background-size: auto 35px;
   }
+  .gallery-2__line {
+    width: 105%;
+    margin-left: -10px;
+  }
   .gallery-2__line--black {
     margin-top: -35px;
   }
@@ -645,12 +649,20 @@
   .about__text {
     font-size: 16px;
   }
+  .about__line {
+    width: 100%;
+    margin-left: -10px;
+  }
   .about__line--white {
-    margin-top: -45px;
-    margin-bottom: 210px;
+    margin-top: -35px;
+    margin-bottom: 70px;
+    -webkit-transform: rotate(6deg) translateY(0px);
+            transform: rotate(6deg) translateY(0px);
   }
   .about__line--red {
-    margin-top: -50px;
+    margin-top: 50px;
+    -webkit-transform: rotate(-8deg) translateY(0px);
+            transform: rotate(-8deg) translateY(0px);
   }
   .about__line {
     width: 115%;

@@ -718,8 +718,8 @@
   }
   .contacts__title--cuffs::after {
     left: 2px;
-    top: 72%;
-    width: 9px;
+    top: 71.8%;
+    width: 9.5px;
     height: 7px;
   }
   .contacts__title--cuffs::before {

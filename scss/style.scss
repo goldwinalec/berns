@@ -669,8 +669,44 @@ p {
   letter-spacing: 8.76543px;
 }
 .contacts__title--cuffs {
+  position: relative;
   display: block;
   @extend %exo2-italic;
+}
+.contacts__title--cuffs::before {
+  position: absolute;
+  content: '';
+  left: -28px;
+  top: 62%;
+  width: 270px;
+  height: 194px;
+  background-image: url('/images/icons/cuffs.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: cuffs 3s infinite cubic-bezier(0.1, -0.2, 0.2, 0);
+  transform-origin: 17% 20%;
+}
+@keyframes cuffs {
+  0% {
+  }
+  50% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.contacts__title--cuffs::after {
+  position: absolute;
+  content: '';
+  left: 5px;
+  top: 69%;
+  bottom: 0;
+  width: 28px;
+  height: 26px;
+  background-image: url('/images/icons/cuffs-path.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .contacts__title--right {
   display: block;
@@ -695,6 +731,28 @@ p {
   bottom: 1px;
   left: 20px;
   z-index: -1;
+}
+.tel-line {
+  stroke-dasharray: 850;
+  animation: dash 7s infinite ease-out;
+}
+@keyframes dash {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 850;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .contacts__right {
   display: flex;

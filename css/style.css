@@ -1117,7 +1117,63 @@ p {
 }
 
 .contacts__title--cuffs {
+  position: relative;
   display: block;
+}
+
+.contacts__title--cuffs::before {
+  position: absolute;
+  content: '';
+  left: -28px;
+  top: 62%;
+  width: 270px;
+  height: 194px;
+  background-image: url("/images/icons/cuffs.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: cuffs 3s infinite cubic-bezier(0.1, -0.2, 0.2, 0);
+          animation: cuffs 3s infinite cubic-bezier(0.1, -0.2, 0.2, 0);
+  -webkit-transform-origin: 17% 20%;
+          transform-origin: 17% 20%;
+}
+
+@-webkit-keyframes cuffs {
+  0% {
+  }
+  50% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes cuffs {
+  0% {
+  }
+  50% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.contacts__title--cuffs::after {
+  position: absolute;
+  content: '';
+  left: 5px;
+  top: 69%;
+  bottom: 0;
+  width: 28px;
+  height: 26px;
+  background-image: url("/images/icons/cuffs-path.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .contacts__title--right {
@@ -1151,6 +1207,50 @@ p {
   bottom: 1px;
   left: 20px;
   z-index: -1;
+}
+
+.tel-line {
+  stroke-dasharray: 850;
+  -webkit-animation: dash 7s infinite ease-out;
+          animation: dash 7s infinite ease-out;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 850;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 850;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .contacts__right {

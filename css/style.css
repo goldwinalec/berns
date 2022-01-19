@@ -302,12 +302,40 @@ p {
   position: absolute;
   top: 29px;
   right: -47px;
-  width: 119px;
-  height: 119px;
-  background-image: url("/images/icons/play-btn.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.play-line-1,
+.play-line-2,
+.play-line-3 {
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.hero__play-btn:hover .play-line-1 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.hero__play-btn:hover .play-line-2 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.hero__play-btn:hover .play-line-3 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(90deg) translate(-9px, 2px);
+          transform: rotate(90deg) translate(-9px, 2px);
 }
 
 .hero__title-wrapper {
@@ -334,13 +362,37 @@ p {
 
 .hero__down-btn {
   display: block;
-  width: 152px;
-  height: 152px;
   margin-top: -10px;
-  background-image: url("/images/icons/down-btn.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+}
+
+.down-line {
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.hero__down-btn:hover .down-line-1 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.hero__down-btn:hover .down-line-2 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.hero__down-btn:hover .down-line-3 {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .hero__bottom-inner {
@@ -1162,7 +1214,7 @@ p {
     width: 80px;
     height: 80px;
   }
-  .hero__down-btn {
+  .hero__down-btn svg {
     width: 100px;
     height: 100px;
   }
@@ -1201,6 +1253,9 @@ p {
   .about__text--line {
     max-width: 100%;
   }
+  .gallery-2__line--black {
+    margin-top: -140px;
+  }
   .gallery-2__line,
   .about__line {
     margin-left: -30px;
@@ -1230,6 +1285,9 @@ p {
 }
 
 @media (max-width: 1200px) {
+  .header {
+    margin-right: -14px;
+  }
   .header__link {
     font-size: 45px;
   }
@@ -1289,6 +1347,9 @@ p {
   .about__line {
     height: 100px;
     background-size: auto 100px;
+  }
+  .gallery-2__line--black {
+    margin-top: -100px;
   }
   .gallery-2__img--whip {
     width: 250px;
@@ -1355,6 +1416,9 @@ p {
 }
 
 @media (max-width: 991px) {
+  .header {
+    margin-right: -11px;
+  }
   .header__link {
     font-size: 28px;
   }
@@ -1573,7 +1637,7 @@ p {
   .hero__title {
     font-size: 16px;
   }
-  .hero__down-btn {
+  .hero__down-btn svg {
     width: 50px;
     height: 50px;
   }
@@ -1699,6 +1763,7 @@ p {
             flex-direction: column;
   }
   .hero {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1713,6 +1778,17 @@ p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .hero__logo {
+    width: 100%;
+  }
+  .hero__link {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+  }
+  .hero__title-wrapper {
+    margin-left: 0;
   }
   .hero__title {
     margin-top: 20px;

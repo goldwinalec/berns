@@ -683,7 +683,7 @@ p {
   background-image: url('/images/icons/cuffs.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  animation: cuffs 3s infinite cubic-bezier(0.4, -0.2, 0.2, 0);
+  animation: cuffs 4s infinite cubic-bezier(0.3, -0.1, 0.2, 0.2);
   transform-origin: 17% 20%;
 }
 @keyframes cuffs {

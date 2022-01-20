@@ -73,7 +73,6 @@ const show = function () {
   const header = document.querySelector('.header');
   const loader = document.querySelector('.preloader');
   loader.style.display = 'none';
-  body.classList.add('active');
   setTimeout(() => {
     hero.classList.add('active');
   }, 1000);

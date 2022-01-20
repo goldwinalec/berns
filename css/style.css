@@ -127,29 +127,6 @@ body.white {
   background: #fff;
 }
 
-.active {
-  -webkit-animation: opacity 1s linear;
-          animation: opacity 1s linear;
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 a {
   color: inherit;
   text-decoration: none;

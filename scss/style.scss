@@ -24,17 +24,6 @@ body {
 body.white {
   background: #fff;
 }
-.active {
-  animation: opacity 1s linear;
-}
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 a {
   color: inherit;
   text-decoration: none;

@@ -7,7 +7,7 @@ const observeLogo = function () {};
 
 const observeGallery = function () {
   const options = {
-    rootMargin: '-200px',
+    rootMargin: '-100px',
   };
 
   const observeCallback = function (entries, observer) {

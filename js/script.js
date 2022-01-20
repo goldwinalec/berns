@@ -72,8 +72,8 @@ const lazyLoad = function () {
 const show = function () {
   const header = document.querySelector('.header');
   const loader = document.querySelector('.preloader');
-  loader.style.display = 'none';
   setTimeout(() => {
+    loader.style.display = 'none';
     hero.classList.add('active');
   }, 500);
   setTimeout(() => {
@@ -89,8 +89,11 @@ const init = function () {
   lazyLoad();
 };
 
-document.onreadystatechange = function () {
-  if (document.readyState == 'complete') {
-    init();
-  }
+// document.onreadystatechange = function () {
+//   if (document.readyState == 'complete') {
+//     init();
+//   }
+// };
+window.onload = function () {
+  init();
 };

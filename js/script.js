@@ -34,7 +34,7 @@ const observeGallery = function () {
 
 const observeImages = function () {
   const options = {
-    rootMargin: '-50px',
+    rootMargin: '50px',
   };
 
   const observeCallback = function (entries, observer) {

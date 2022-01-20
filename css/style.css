@@ -171,6 +171,14 @@ p {
   padding: 0;
 }
 
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  z-index: 3;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;

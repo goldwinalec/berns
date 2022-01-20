@@ -75,10 +75,10 @@ const show = function () {
   loader.style.display = 'none';
   setTimeout(() => {
     hero.classList.add('active');
-  }, 1000);
+  }, 500);
   setTimeout(() => {
     header.classList.add('active');
-  }, 1500);
+  }, 1000);
 };
 
 const init = function () {

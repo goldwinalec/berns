@@ -89,11 +89,15 @@ const init = function () {
   lazyLoad();
 };
 
-// document.onreadystatechange = function () {
-//   if (document.readyState == 'complete') {
-//     init();
-//   }
-// };
+document.querySelectorAll('a').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
+
 window.onload = function () {
   init();
 };

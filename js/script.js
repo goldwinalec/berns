@@ -31,9 +31,8 @@ const observeImages = function () {
       const { target, isIntersecting } = entry;
 
       if (isIntersecting) {
-        entry.target.classList.add('gallery__img--visible');
-        console.log(entry.target.src);
-        observer.unobserve(entry.target);
+        target.classList.add('gallery__img--visible');
+        observer.unobserve(target);
       }
     });
   };

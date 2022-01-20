@@ -152,7 +152,8 @@ p {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background: #111 url("/images/content/loader.svg") no-repeat center center;
+  background-size: 50px 50px;
   z-index: 3;
 }
 

@@ -431,26 +431,23 @@ p {
 
 .gallery__img {
   display: block;
-}
-
-.gallery__img {
-  opacity: 1;
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translateY(200px) scale(0.7);
+          transform: translateY(200px) scale(0.7);
+}
+
+.gallery__img--visible {
+  opacity: 1;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 
 .gallery__img:hover {
   -webkit-filter: invert(100%);
           filter: invert(100%);
-}
-
-.gallery__img--hidden {
-  opacity: 0;
-  -webkit-transform: translateY(200px) scale(0.5);
-          transform: translateY(200px) scale(0.5);
 }
 
 .gallery-1__img--1 {

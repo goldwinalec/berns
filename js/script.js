@@ -23,8 +23,7 @@ const observeGallery = function () {
 
 const observeImages = function () {
   const options = {
-    rootMargin: '10%',
-    threshold: 0.1,
+    rootMargin: '100px',
   };
 
   const trueCallback = function (entries, observer) {
@@ -32,7 +31,8 @@ const observeImages = function () {
       const { target, isIntersecting } = entry;
 
       if (isIntersecting) {
-        entry.target.classList.remove('gallery__img--hidden');
+        entry.target.classList.add('gallery__img--visible');
+        console.log(entry.target.src);
         observer.unobserve(entry.target);
       }
     });
@@ -51,7 +51,6 @@ const lazyLoad = function () {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry);
             entry.target.src = entry.target.dataset.src;
             observer.unobserve(entry.target);
           }
@@ -59,7 +58,7 @@ const lazyLoad = function () {
       },
       { rootMargin: '0px 0px 300px 0px' }
     );
-    document.querySelectorAll('.gallery__img').forEach((img) => {
+    document.querySelectorAll('img').forEach((img) => {
       observer.observe(img);
     });
   }

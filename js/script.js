@@ -2,8 +2,13 @@
 
 const body = document.querySelector('body');
 const hero = document.querySelector('.hero');
+const logo = document.querySelector('.hero__logo');
 
-const observeLogo = function () {};
+const observeLogo = function () {
+  window.addEventListener('scroll', function () {
+    logo.style.transform = `translateY(-${scrollY * 0.5}px)`;
+  });
+};
 
 const observeGallery = function () {
   const options = {

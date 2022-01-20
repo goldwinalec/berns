@@ -20,7 +20,10 @@ body {
   line-height: 1.2;
   color: #fff;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: all 1s ease;
+}
+body.white {
+  background: #fff;
 }
 .active {
   opacity: 1;

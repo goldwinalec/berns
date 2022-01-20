@@ -1,7 +1,10 @@
+'use strict';
+
+const body = document.querySelector('body');
+
 const observeGallery = function () {
   const options = {
-    rootMargin: '-50%',
-    threshold: [0, 0],
+    rootMargin: '-150px',
   };
 
   const trueCallback = function (entries, observer) {
@@ -9,9 +12,9 @@ const observeGallery = function () {
       const { target, isIntersecting } = entry;
 
       if (isIntersecting) {
-        target.classList.add('gallery-2--active');
+        body.classList.add('white');
       } else {
-        target.classList.remove('gallery-2--active');
+        body.classList.remove('white');
       }
     });
   };
@@ -64,7 +67,6 @@ const lazyLoad = function () {
 };
 
 const show = function () {
-  const body = document.querySelector('body');
   const header = document.querySelector('.header');
   const hero = document.querySelector('.hero');
   body.classList.add('active');

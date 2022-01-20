@@ -4,7 +4,7 @@ const body = document.querySelector('body');
 
 const observeGallery = function () {
   const options = {
-    rootMargin: '-150px',
+    rootMargin: '-200px',
   };
 
   const trueCallback = function (entries, observer) {

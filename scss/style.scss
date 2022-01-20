@@ -19,6 +19,11 @@ body {
   font-size: 24px;
   line-height: 1.2;
   color: #fff;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.active {
+  opacity: 1;
 }
 a {
   color: inherit;
@@ -38,7 +43,6 @@ p {
   margin: 0;
   padding: 0;
 }
-
 .header {
   display: flex;
   align-items: center;
@@ -46,6 +50,11 @@ p {
   padding-top: 11px;
   padding-left: 48px;
   margin-right: -18px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.header.active {
+  opacity: 1;
 }
 .header__link {
   @extend %montserrat-bold;
@@ -66,14 +75,14 @@ p {
 .header__link-3 {
   display: block;
 }
-.header__link-1 {
-  animation: header-1 0.7s ease;
+.header.active .header__link-1 {
+  animation: header-1 1s ease;
 }
-.header__link-2 {
-  animation: header-2 0.7s ease;
+.header.active .header__link-2 {
+  animation: header-2 1s ease;
 }
-.header__link-3 {
-  animation: header-3 0.7s ease;
+.header.active .header__link-3 {
+  animation: header-3 1s ease;
 }
 @keyframes header-1 {
   0% {
@@ -113,6 +122,11 @@ p {
 }
 .hero {
   margin-top: 16px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero.active {
+  opacity: 1;
 }
 .hero__top-inner {
   display: flex;
@@ -124,6 +138,14 @@ p {
 }
 .hero__img-wrapper {
   position: relative;
+}
+.hero__logo {
+  opacity: 0;
+  transition: opacity 1s ease 1s;
+  z-index: -1;
+}
+.hero.active .hero__logo {
+  opacity: 1;
 }
 .hero__play-btn {
   position: absolute;
@@ -208,12 +230,15 @@ p {
 }
 .gallery__img {
   display: block;
+  width: 100%;
+  height: 100%;
   transition: all 0.5s ease;
   cursor: pointer;
   opacity: 0;
   transform: translateY(200px) scale(0.7);
 }
 .gallery__img--visible {
+  height: auto;
   opacity: 1;
   transform: translateY(0) scale(1);
 }

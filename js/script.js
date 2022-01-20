@@ -9,9 +9,9 @@ const observeGallery = function () {
       const { target, isIntersecting } = entry;
 
       if (isIntersecting) {
-        entry.target.classList.add('gallery-2--active');
+        target.classList.add('gallery-2--active');
       } else {
-        entry.target.classList.remove('gallery-2--active');
+        target.classList.remove('gallery-2--active');
       }
     });
   };
@@ -31,9 +31,8 @@ const observeImages = function () {
       const { target, isIntersecting } = entry;
 
       if (isIntersecting) {
-        entry.target.classList.add('gallery__img--visible');
-        console.log(entry.target.src);
-        observer.unobserve(entry.target);
+        target.classList.add('gallery__img--visible');
+        observer.unobserve(target);
       }
     });
   };
@@ -64,7 +63,28 @@ const lazyLoad = function () {
   }
 };
 
-observeGallery();
-observeImages();
+const show = function () {
+  const body = document.querySelector('body');
+  const header = document.querySelector('.header');
+  const hero = document.querySelector('.hero');
+  body.classList.add('active');
+  setTimeout(() => {
+    hero.classList.add('active');
+  }, 1000);
+  setTimeout(() => {
+    header.classList.add('active');
+  }, 1500);
+};
 
-lazyLoad();
+const init = function () {
+  show();
+  observeGallery();
+  observeImages();
+  lazyLoad();
+};
+
+document.onreadystatechange = function () {
+  if (document.readyState == 'complete') {
+    init();
+  }
+};

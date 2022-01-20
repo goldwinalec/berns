@@ -23,7 +23,7 @@ const observeGallery = function () {
 
 const observeImages = function () {
   const options = {
-    rootMargin: '100px',
+    rootMargin: '-50px',
   };
 
   const trueCallback = function (entries, observer) {

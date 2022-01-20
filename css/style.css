@@ -119,9 +119,8 @@ body {
   font-size: 24px;
   line-height: 1.2;
   color: #fff;
-  opacity: 0;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
 }
 
 body.white {
@@ -129,7 +128,26 @@ body.white {
 }
 
 .active {
-  opacity: 1;
+  -webkit-animation: opacity 1s linear;
+          animation: opacity 1s linear;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 a {
@@ -325,8 +343,10 @@ p {
 
 .hero__logo {
   opacity: 0;
-  -webkit-transition: opacity 1s ease 1s;
-  transition: opacity 1s ease 1s;
+  -webkit-transition: opacity 1s ease 1s, -webkit-transform 0.2s ease;
+  transition: opacity 1s ease 1s, -webkit-transform 0.2s ease;
+  transition: opacity 1s ease 1s, transform 0.2s ease;
+  transition: opacity 1s ease 1s, transform 0.2s ease, -webkit-transform 0.2s ease;
   z-index: -1;
 }
 
@@ -711,12 +731,6 @@ p {
   padding-top: 491px;
   padding-bottom: 373px;
   color: #111111;
-  -webkit-transition: background 1s ease-out;
-  transition: background 1s ease-out;
-}
-
-.gallery-2--active {
-  background: #fff;
 }
 
 .text {

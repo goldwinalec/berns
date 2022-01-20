@@ -1,13 +1,16 @@
 'use strict';
 
 const body = document.querySelector('body');
+const hero = document.querySelector('.hero');
+
+const observeLogo = function () {};
 
 const observeGallery = function () {
   const options = {
     rootMargin: '-200px',
   };
 
-  const trueCallback = function (entries, observer) {
+  const observeCallback = function (entries, observer) {
     entries.forEach((entry) => {
       const { target, isIntersecting } = entry;
 
@@ -18,7 +21,7 @@ const observeGallery = function () {
       }
     });
   };
-  const observer = new IntersectionObserver(trueCallback, options);
+  const observer = new IntersectionObserver(observeCallback, options);
 
   const target = document.querySelector('.gallery-2');
   observer.observe(target);
@@ -29,7 +32,7 @@ const observeImages = function () {
     rootMargin: '-50px',
   };
 
-  const trueCallback = function (entries, observer) {
+  const observeCallback = function (entries, observer) {
     entries.forEach((entry) => {
       const { target, isIntersecting } = entry;
 
@@ -39,7 +42,7 @@ const observeImages = function () {
       }
     });
   };
-  const observer = new IntersectionObserver(trueCallback, options);
+  const observer = new IntersectionObserver(observeCallback, options);
 
   const targets = document.querySelectorAll('.gallery__img');
   targets.forEach((target) => {
@@ -68,7 +71,6 @@ const lazyLoad = function () {
 
 const show = function () {
   const header = document.querySelector('.header');
-  const hero = document.querySelector('.hero');
   body.classList.add('active');
   setTimeout(() => {
     hero.classList.add('active');
@@ -80,6 +82,7 @@ const show = function () {
 
 const init = function () {
   show();
+  observeLogo();
   observeGallery();
   observeImages();
   lazyLoad();

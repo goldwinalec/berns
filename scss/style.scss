@@ -19,14 +19,21 @@ body {
   font-size: 24px;
   line-height: 1.2;
   color: #fff;
-  opacity: 0;
-  transition: all 1s ease;
+  transition: background 1s ease;
 }
 body.white {
   background: #fff;
 }
 .active {
-  opacity: 1;
+  animation: opacity 1s linear;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 a {
   color: inherit;
@@ -144,7 +151,7 @@ p {
 }
 .hero__logo {
   opacity: 0;
-  transition: opacity 1s ease 1s;
+  transition: opacity 1s ease 1s, transform 0.2s ease;
   z-index: -1;
 }
 .hero.active .hero__logo {
@@ -383,10 +390,6 @@ p {
   padding-top: 491px;
   padding-bottom: 373px;
   color: $black;
-  transition: background 1s ease-out;
-}
-.gallery-2--active {
-  background: #fff;
 }
 .text {
   font-size: 152px;

@@ -1,11 +1,31 @@
 'use strict';
 
+const html = document.querySelector('html');
 const body = document.querySelector('body');
-const hero = document.querySelector('.hero');
-const logo = document.querySelector('.hero__logo');
+const openVideoBtns = document.querySelectorAll('.hero__play-btn');
+
+const playVideo = function () {
+  openVideoBtns.forEach((btn) =>
+    btn.addEventListener('click', function () {
+      const video = `<div class="video__wrapper">
+    <video src="/videos/video.mp4" class="video" preload="none" poster="/images/content/poster.jpg" controls autoplay></video>
+    <div class="overlay"><div>
+    </div>`;
+      body.insertAdjacentHTML('afterbegin', video);
+      html.classList.add('disable');
+      const overlay = document.querySelector('.overlay');
+      const wrapper = document.querySelector('.video__wrapper');
+      overlay.addEventListener('click', function () {
+        html.classList.remove('disable');
+        wrapper.remove();
+      });
+    })
+  );
+};
 
 const observeLogo = function () {
   window.addEventListener('scroll', function () {
+    const logo = document.querySelector('.hero__logo');
     logo.style.transform = `translateY(-${scrollY * 0.5}px)`;
   });
 };
@@ -96,8 +116,9 @@ const lazyLoad = function () {
   }
 };
 
-const show = function () {
+const showContent = function () {
   const header = document.querySelector('.header');
+  const hero = document.querySelector('.hero');
   const loader = document.querySelector('.preloader');
   const main = document.querySelector('.main');
   setTimeout(() => {
@@ -111,12 +132,13 @@ const show = function () {
 };
 
 const init = function () {
-  show();
+  showContent();
   observeLogo();
   observeGallery();
   observeImages();
   observeText();
   lazyLoad();
+  playVideo();
 };
 
 document.querySelectorAll('a').forEach((anchor) => {

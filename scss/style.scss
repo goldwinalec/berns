@@ -9,6 +9,9 @@
 html {
   overflow-x: hidden;
 }
+html.disable {
+  overflow-y: hidden;
+}
 body {
   overflow-x: hidden;
   box-sizing: border-box;
@@ -845,4 +848,46 @@ p {
 .contacts__link:last-child::before {
   background-image: url('/images/icons/contacts-item-2.svg');
 }
+.video__wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: video 0.5s ease;
+  z-index: 5;
+}
+@keyframes video {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.video {
+  position: fixed;
+  width: 80%;
+  z-index: 6;
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: video 0.5s ease;
+  z-index: 4;
+  cursor: pointer;
+}
+
 @import 'media';

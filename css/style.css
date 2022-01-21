@@ -109,6 +109,10 @@ html {
   overflow-x: hidden;
 }
 
+html.disable {
+  overflow-y: hidden;
+}
+
 body {
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
@@ -1385,6 +1389,68 @@ p {
 
 .contacts__link:last-child::before {
   background-image: url("/images/icons/contacts-item-2.svg");
+}
+
+.video__wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: video 0.5s ease;
+          animation: video 0.5s ease;
+  z-index: 5;
+}
+
+@-webkit-keyframes video {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes video {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.video {
+  position: fixed;
+  width: 80%;
+  z-index: 6;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: video 0.5s ease;
+          animation: video 0.5s ease;
+  z-index: 4;
+  cursor: pointer;
 }
 
 @media (max-width: 1480px) {

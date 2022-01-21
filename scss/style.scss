@@ -416,7 +416,7 @@ p {
 .text__wrapper .text__animation {
   opacity: 0;
   transform: rotate(30deg);
-  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease;
 }
 .text__wrapper.active .text__animation {
   opacity: 1;
@@ -425,7 +425,7 @@ p {
 .about .text__wrapper .text__animation {
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease;
 }
 .about .text__wrapper.active .text__animation {
   opacity: 1;

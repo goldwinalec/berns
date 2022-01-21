@@ -753,10 +753,10 @@ p {
   opacity: 0;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
-  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease, opacity 0.2s ease;
-  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: opacity 0.1s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.1s ease, -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease, -webkit-transform 0.7s ease;
 }
 
 .text__wrapper.active .text__animation {
@@ -769,10 +769,10 @@ p {
   opacity: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease, opacity 0.2s ease;
-  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: opacity 0.1s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.1s ease, -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease;
+  transition: transform 0.7s ease, opacity 0.1s ease, -webkit-transform 0.7s ease;
 }
 
 .about .text__wrapper.active .text__animation {

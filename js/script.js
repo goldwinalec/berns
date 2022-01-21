@@ -55,6 +55,28 @@ const observeImages = function () {
   });
 };
 
+const observeText = function () {
+  const options = {
+    root: null,
+    rootMargin: '-100px',
+    threshold: 0.1,
+  };
+
+  const observeCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  };
+  const observer = new IntersectionObserver(observeCallback, options);
+
+  const targets = document.querySelectorAll('.text__wrapper');
+  targets.forEach((target) => {
+    observer.observe(target);
+  });
+};
+
 const lazyLoad = function () {
   if (!!window.IntersectionObserver) {
     let observer = new IntersectionObserver(
@@ -77,9 +99,11 @@ const lazyLoad = function () {
 const show = function () {
   const header = document.querySelector('.header');
   const loader = document.querySelector('.preloader');
+  const main = document.querySelector('.main');
   setTimeout(() => {
     loader.style.display = 'none';
     hero.classList.add('active');
+    main.classList.add('active');
   }, 500);
   setTimeout(() => {
     header.classList.add('active');
@@ -91,6 +115,7 @@ const init = function () {
   observeLogo();
   observeGallery();
   observeImages();
+  observeText();
   lazyLoad();
 };
 

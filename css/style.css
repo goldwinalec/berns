@@ -297,6 +297,16 @@ p {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
 }
 
+.main {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+.main.active {
+  opacity: 1;
+}
+
 .hero {
   margin-top: 16px;
   opacity: 0;
@@ -733,6 +743,42 @@ p {
   line-height: 1.06;
   letter-spacing: 18px;
   z-index: 2;
+}
+
+.text__wrapper {
+  overflow: hidden;
+}
+
+.text__wrapper .text__animation {
+  opacity: 0;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+}
+
+.text__wrapper.active .text__animation {
+  opacity: 1;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.about .text__wrapper .text__animation {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+}
+
+.about .text__wrapper.active .text__animation {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .text__line {

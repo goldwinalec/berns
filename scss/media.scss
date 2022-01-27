@@ -71,7 +71,6 @@
   }
   .text__line--2 {
     left: 48%;
-    bottom: -10px;
   }
   .text__line--3 {
     max-width: 87%;
@@ -640,7 +639,7 @@
   .text__line--2,
   .text__line--3 {
     height: 100%;
-    bottom: 0;
+    bottom: -5px;
   }
   .gallery-2__line,
   .about__line {

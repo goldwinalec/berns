@@ -43,7 +43,8 @@ const observeImages = function () {
 
       if (isIntersecting) {
         target.classList.add('gallery__img--visible');
-        observer.unobserve(target);
+      } else {
+        target.classList.remove('gallery__img--visible');
       }
     });
   };
@@ -58,14 +59,16 @@ const observeImages = function () {
 const observeText = function () {
   const options = {
     root: null,
-    rootMargin: '-100px',
-    threshold: 0.1,
+    rootMargin: '-50px',
+    threshold: 0,
   };
 
   const observeCallback = function (entries, observer) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
       }
     });
   };
@@ -238,10 +241,15 @@ const showContent = function () {
   const hero = document.querySelector('.hero');
   const loader = document.querySelector('.preloader');
   const main = document.querySelector('.main');
+  lazyLoad();
   setTimeout(() => {
     loader.style.display = 'none';
     hero.classList.add('active');
     main.classList.add('active');
+    observeLogo();
+    observeGallerySection();
+    observeImages();
+    observeText();
   }, 500);
   setTimeout(() => {
     header.classList.add('active');
@@ -250,11 +258,6 @@ const showContent = function () {
 
 const init = function () {
   showContent();
-  observeLogo();
-  observeGallerySection();
-  observeImages();
-  observeText();
-  lazyLoad();
   playVideo();
   openGallery();
 };

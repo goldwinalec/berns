@@ -58,7 +58,6 @@ p {
   align-items: center;
   justify-content: space-between;
   padding-top: 11px;
-  padding-left: 48px;
   margin-right: -18px;
   opacity: 0;
   transition: opacity 1s ease;
@@ -77,8 +76,15 @@ p {
 .header__link-3 {
   transition: all 0.3s ease;
 }
-.header__link:hover .header__link-3 {
-  -webkit-text-stroke: 1px #fff;
+@media (min-width: 1024px) {
+  .header__link:hover .header__link-3 {
+    -webkit-text-stroke: 1px #fff;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .header__link:hover .header__link-3 {
+    -webkit-text-stroke: 1px #979797;
+  }
 }
 .header__link-1,
 .header__link-2,
@@ -249,7 +255,7 @@ p {
   display: block;
   width: 100%;
   height: 100%;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s linear, transform 0.7s linear;
   cursor: pointer;
   opacity: 0;
   transform: scale(0.7);
@@ -258,9 +264,6 @@ p {
   height: auto;
   opacity: 1;
   transform: scale(1);
-}
-.gallery__img:hover {
-  filter: invert(100%);
 }
 .gallery-1__img--1 {
   margin-right: 54px;
@@ -532,12 +535,14 @@ p {
 }
 .gallery-2__line--red {
   margin-top: 230px;
+  background-color: #c32018;
   background: url('/images/icons/red-line.jpg') repeat-x;
   animation: ani 60s linear infinite;
   transform: rotate(10deg);
 }
 .gallery-2__line--black {
   margin-top: -100px;
+  background-color: #000;
   background: url('/images/icons/black-line.jpg') repeat-x;
   animation: ani-reverse 60s linear infinite;
   transform: rotate(-4deg);
@@ -772,12 +777,14 @@ p {
 .about__line--white {
   margin-top: -150px;
   margin-bottom: 300px;
+  background-color: #fff;
   background: url('/images/icons/white-line.jpg') repeat-x;
   animation: ani-reverse 60s linear infinite;
   transform: rotate(6deg) translateY(130px);
 }
 .about__line--red {
   margin-top: 200px;
+  background-color: #c32018;
   background: url('/images/icons/red-line.jpg') repeat-x;
   animation: ani 60s linear infinite;
   transform: rotate(-8deg) translateY(120px);
@@ -909,10 +916,24 @@ p {
   background-image: url('/images/icons/contacts-item-1.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 0.2s ease;
 }
 .contacts__link:hover::before {
-  transform: translateY(-20px);
+  animation: bounce 1s ease-out;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 .contacts__link:last-child {
   margin-top: 54px;
@@ -972,6 +993,7 @@ p {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  padding: 0 50px;
   width: 100%;
   height: 100%;
   background-color: #111111;
@@ -986,12 +1008,12 @@ p {
   height: unset;
 }
 .wrapper__img {
-  max-height: 80%;
+  height: 90%;
   display: block;
   z-index: 5;
 }
 .wrapper__img + .wrapper__img {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 @import 'media';

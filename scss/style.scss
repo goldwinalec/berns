@@ -281,6 +281,7 @@ p {
   max-width: 93%;
 }
 .gallery__img {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -293,6 +294,22 @@ p {
   height: auto;
   opacity: 1;
   transform: scale(1);
+}
+.gallery__img-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.gallery__img-wrapper:hover::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('/images/icons/line.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .gallery-1__img--1 {
   margin-right: 54px;

@@ -133,9 +133,9 @@ const playVideo = function () {
 };
 
 const openGallery = function () {
-  const images = document.querySelectorAll('.gallery__img');
-  images.forEach((image) => {
-    image.addEventListener('click', function () {
+  const imageBtns = document.querySelectorAll('.gallery__img-wrapper');
+  imageBtns.forEach((btn) => {
+    btn.addEventListener('click', function () {
       const gallery = `<div class="gallery__wrapper wrapper">
   <div class="swiper-wrapper">
     <img
@@ -264,10 +264,6 @@ const openGallery = function () {
         html.classList.remove('disable');
         wrapper.remove();
       });
-      // wrapper.addEventListener('wheel', (evt) => {
-      //   evt.preventDefault();
-      //   wrapper.scrollLeft += evt.deltaY;
-      // });
     });
   });
 };

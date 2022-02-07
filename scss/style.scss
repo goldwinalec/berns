@@ -270,11 +270,21 @@ p {
   margin-left: auto;
   width: 442px;
 }
+@media (min-width: 1600px) {
+  .gallery-1__img--1 {
+    width: 550px;
+  }
+}
 .gallery-1__img--2 {
   position: relative;
   margin-top: -270px;
   margin-left: 12%;
   width: 462px;
+}
+@media (min-width: 1600px) {
+  .gallery-1__img--2 {
+    width: 550px;
+  }
 }
 .gallery-1__img-eye {
   position: absolute;
@@ -317,9 +327,21 @@ p {
   margin-left: auto;
   width: 442px;
 }
+@media (min-width: 1600px) {
+  .gallery-1__img--3 {
+    margin-top: -50px;
+    margin-right: 85px;
+    width: 600px;
+  }
+}
 .gallery-1__img--4 {
   margin-top: -161px;
   width: 716px;
+}
+@media (min-width: 1600px) {
+  .gallery-1__img--4 {
+    width: 800px;
+  }
 }
 .gallery-1__video-wrapper {
   position: relative;
@@ -344,16 +366,31 @@ p {
   margin-left: 98px;
   width: 474px;
 }
+@media (min-width: 1600px) {
+  .gallery-1__img--5 {
+    width: 550px;
+  }
+}
 .gallery-1__img--6 {
   margin-left: auto;
   margin-top: -368px;
   margin-right: 82px;
   width: 589px;
 }
+@media (min-width: 1600px) {
+  .gallery-1__img--6 {
+    width: 650px;
+  }
+}
 .gallery-1__img--7 {
   position: relative;
   margin: 292px auto 0;
   width: 1001px;
+}
+@media (min-width: 1600px) {
+  .gallery-1__img--7 {
+    width: 1100px;
+  }
 }
 .gallery-1__img--choker {
   position: absolute;
@@ -577,6 +614,11 @@ p {
   margin-left: 144px;
   width: 924px;
 }
+@media (min-width: 1600px) {
+  .gallery-2__img--8 {
+    width: 1100px;
+  }
+}
 .gallery-2__img--whip {
   position: absolute;
   right: -296px;
@@ -599,9 +641,19 @@ p {
   margin-right: 99px;
   width: 590px;
 }
+@media (min-width: 1600px) {
+  .gallery-2__img--9 {
+    width: 650px;
+  }
+}
 .gallery-2__img--10 {
   margin-top: -293px;
   width: 480px;
+}
+@media (min-width: 1600px) {
+  .gallery-2__img--10 {
+    width: 550px;
+  }
 }
 .gallery-3 {
   margin-top: -446px;
@@ -618,21 +670,41 @@ p {
   margin-left: auto;
   width: 532px;
 }
+@media (min-width: 1600px) {
+  .gallery-3__img--11 {
+    width: 650px;
+  }
+}
 .gallery-3__img--12 {
   margin-top: -294px;
   margin-left: 35px;
   width: 570px;
+}
+@media (min-width: 1600px) {
+  .gallery-3__img--12 {
+    width: 650px;
+  }
 }
 .gallery-3__img--13 {
   margin-right: 113px;
   margin-left: auto;
   width: 570px;
 }
+@media (min-width: 1600px) {
+  .gallery-3__img--13 {
+    width: 650px;
+  }
+}
 .gallery-3__img--14 {
   position: relative;
   margin-left: 134px;
   margin-top: 28px;
   width: 585px;
+}
+@media (min-width: 1600px) {
+  .gallery-3__img--14 {
+    width: 650px;
+  }
 }
 .gallery-3__img--heart {
   position: absolute;
@@ -690,16 +762,31 @@ p {
   margin-top: 147px;
   width: 443px;
 }
+@media (min-width: 1600px) {
+  .gallery-3__img--15 {
+    width: 550px;
+  }
+}
 .gallery-3__img--16 {
   margin-top: -176px;
   margin-left: 34px;
   width: 480px;
+}
+@media (min-width: 1600px) {
+  .gallery-3__img--16 {
+    width: 550px;
+  }
 }
 .gallery-3__img--17 {
   margin-left: auto;
   margin-right: 170px;
   margin-top: -157px;
   width: 606px;
+}
+@media (min-width: 1600px) {
+  .gallery-3__img--17 {
+    width: 710px;
+  }
 }
 .about {
   padding-top: 238px;

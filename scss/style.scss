@@ -243,6 +243,7 @@ p {
   background-image: url('/images/icons/hand.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   animation: hand 1.5s infinite ease-in-out;
   z-index: 1;
 }
@@ -308,7 +309,7 @@ p {
   left: 0;
   background-image: url('/images/icons/line.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 .gallery-1__img--1 {

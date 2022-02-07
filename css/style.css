@@ -499,6 +499,7 @@ p {
   background-image: url("/images/icons/hand.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   -webkit-animation: hand 1.5s infinite ease-in-out;
           animation: hand 1.5s infinite ease-in-out;
   z-index: 1;
@@ -604,7 +605,7 @@ p {
   left: 0;
   background-image: url("/images/icons/line.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
@@ -1896,7 +1897,6 @@ p {
     height: 80px;
   }
   .hero__down-btn {
-    width: 100px;
     height: 100px;
   }
   .gallery__img {
@@ -2327,11 +2327,13 @@ p {
     -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
   }
+  .hero__img-wrapper {
+    margin-left: 0;
+  }
   .hero__title {
     font-size: 16px;
   }
   .hero__down-btn {
-    width: 50px;
     height: 50px;
   }
   .hero__link {

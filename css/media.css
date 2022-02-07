@@ -11,7 +11,6 @@
     height: 80px;
   }
   .hero__down-btn {
-    width: 100px;
     height: 100px;
   }
   .gallery__img {
@@ -442,11 +441,13 @@
     -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
   }
+  .hero__img-wrapper {
+    margin-left: 0;
+  }
   .hero__title {
     font-size: 16px;
   }
   .hero__down-btn {
-    width: 50px;
     height: 50px;
   }
   .hero__link {

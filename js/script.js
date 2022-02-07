@@ -137,82 +137,95 @@ const openGallery = function () {
   images.forEach((image) => {
     image.addEventListener('click', function () {
       const gallery = `<div class="gallery__wrapper wrapper">
-  <img
-    src="/images/content/gallery-img-1.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-2.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-3.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-4.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-5.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-6.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-7.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-8.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-9.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-10.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-11.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-12.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-13.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-14.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-15.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img
-    src="/images/content/gallery-img-16.jpg"
-    alt=""
-    class="wrapper__img"
-  /><img src="/images/content/gallery-img-17.jpg" alt="" class="wrapper__img" />
-  <div class="overlay"></div>
-</div>`;
+  <div class="swiper-wrapper">
+    <img
+      src="/images/content/gallery-img-1.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-2.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-3.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-4.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-5.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-6.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-7.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-8.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-9.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-10.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-11.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-12.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-13.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-14.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-15.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-16.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    /><img
+      src="/images/content/gallery-img-17.jpg"
+      alt=""
+      class="wrapper__img swiper-slide"
+    />
+  </div>
+  <div class="swiper-scrollbar"></div>
+  <div class="wrapper__close"></div>
+</div>
+`;
       body.insertAdjacentHTML('afterbegin', gallery);
       html.classList.add('disable');
-      const overlay = document.querySelector('.overlay');
+      const closeBtn = document.querySelector('.wrapper__close');
       const wrapper = document.querySelector('.gallery__wrapper');
-      const generateDarkColorRgb = function () {
-        const red = Math.floor(Math.random() * 256);
-        const green = 0;
-        const blue = 0;
-        return 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+      const generateColor = function () {
+        const colors = [
+          '140624',
+          '130D0D',
+          '091A20',
+          '1C0813',
+          '02161C',
+          '04071A',
+        ];
+        return `#${colors[Math.floor(Math.random() * colors.length)]}`;
       };
       const observeBackgound = function () {
         const options = {
@@ -224,7 +237,7 @@ const openGallery = function () {
         const observeCallback = function (entries, observer) {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              wrapper.style.background = generateDarkColorRgb();
+              wrapper.style.background = generateColor();
             }
           });
         };
@@ -236,15 +249,25 @@ const openGallery = function () {
         });
       };
       observeBackgound();
-
-      overlay.addEventListener('click', function () {
+      const swiperGallery = new Swiper('.gallery__wrapper', {
+        slidesPerView: 'auto',
+        freeMode: true,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        },
+      });
+      closeBtn.addEventListener('click', function () {
         html.classList.remove('disable');
         wrapper.remove();
       });
-      wrapper.addEventListener('wheel', (evt) => {
-        evt.preventDefault();
-        wrapper.scrollLeft += evt.deltaY;
-      });
+      // wrapper.addEventListener('wheel', (evt) => {
+      //   evt.preventDefault();
+      //   wrapper.scrollLeft += evt.deltaY;
+      // });
     });
   });
 };

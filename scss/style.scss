@@ -180,20 +180,45 @@ p {
 .play-line-1,
 .play-line-2,
 .play-line-3 {
-  transition: transform 0.5s linear;
   transform-origin: 50% 50%;
+  transition: transform 0.5s linear;
+  transform: rotate(0);
+}
+.play-line-3 {
+  transform-origin: 54% 45%;
 }
 .hero__play-btn:hover .play-line-1 {
-  transform-origin: 50% 50%;
-  transform: rotate(90deg);
+  animation: play-line-1 2s linear infinite;
 }
 .hero__play-btn:hover .play-line-2 {
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
+  animation: play-line-2 2s linear infinite;
 }
 .hero__play-btn:hover .play-line-3 {
-  transform-origin: 50% 50%;
-  transform: rotate(90deg) translate(-9px, 2px);
+  animation: play-line-3 2s linear infinite;
+}
+@keyframes play-line-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes play-line-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes play-line-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .hero__title-wrapper {
   margin-left: 20px;
@@ -208,26 +233,30 @@ p {
   letter-spacing: 0.8px;
   text-transform: uppercase;
   text-align: center;
+  z-index: 2;
 }
 .hero__down-btn {
   display: block;
+  width: 54px;
+  height: 122px;
   margin-top: -10px;
+  background-image: url('/images/icons/hand.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: hand 1.5s infinite ease-in-out;
+  z-index: 1;
 }
-.down-line {
-  transition: transform 0.5s linear;
-  transform-origin: 50% 50%;
-}
-.hero__down-btn:hover .down-line-1 {
-  transform-origin: 50% 50%;
-  transform: rotate(90deg);
-}
-.hero__down-btn:hover .down-line-2 {
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-}
-.hero__down-btn:hover .down-line-3 {
-  transform-origin: 50% 50%;
-  transform: rotate(90deg);
+@keyframes hand {
+  0%,
+  10%,
+  20%,
+  30%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
 }
 .hero__bottom-inner {
   display: flex;
@@ -1076,31 +1105,36 @@ p {
   top: 0;
   bottom: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  padding: 0 50px;
   width: 100%;
   height: 100%;
+  padding: 0 50px;
   background-color: #111111;
   animation: opacity-wrapper 0.5s ease;
   transition: background 0.5s ease;
-  overflow-x: scroll;
   z-index: 5;
 }
-.gallery__wrapper .overlay {
-  background-color: transparent;
-  bottom: 15px;
-  height: unset;
-}
 .wrapper__img {
-  height: 90%;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 85%;
+  width: auto;
   display: block;
   z-index: 5;
 }
 .wrapper__img + .wrapper__img {
   margin-left: 100px;
 }
-
+.wrapper__close {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 41px;
+  height: 26px;
+  background-image: url('/images/icons/cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  z-index: 20;
+}
 @import 'media';

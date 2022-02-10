@@ -197,6 +197,13 @@
     width: 17px;
     height: 15px;
   }
+  .contacts__title--en::after {
+    left: 42px;
+    top: 67%;
+  }
+  .contacts__title--en::before {
+    left: 23px;
+  }
   .contacts__tel,
   .contacts__right {
     font-size: 42px;
@@ -547,11 +554,21 @@
     width: 12.5px;
     height: 9.5px;
   }
+  .contacts__title--en::after {
+    left: 34px;
+    top: 67%;
+    width: 12.5px;
+    height: 11px;
+  }
   .contacts__title--cuffs::before {
     width: 101px;
     height: 72px;
     left: -9px;
     top: 65%;
+  }
+  .contacts__title--en::before {
+    top: 62%;
+    left: 23px;
   }
   .gallery-1__img--1,
   .gallery-1__img--2,
@@ -714,6 +731,15 @@
     height: 51px;
     left: -6px;
     top: 65%;
+  }
+  .contacts__title--en::after {
+    left: 27.5px;
+    top: 67%;
+    height: 9px;
+  }
+  .contacts__title--en::before {
+    top: 62%;
+    left: 21px;
   }
   .contacts__link:first-child {
     margin-left: auto;

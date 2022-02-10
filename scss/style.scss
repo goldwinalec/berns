@@ -505,6 +505,10 @@ p {
   letter-spacing: 18px;
   z-index: 2;
 }
+.text__en {
+  display: block;
+  font-size: 102px;
+}
 .text__wrapper {
   overflow: hidden;
 }
@@ -964,6 +968,9 @@ p {
   animation: cuffs 4s infinite cubic-bezier(0.3, -0.1, 0.2, 0.2);
   transform-origin: 17% 20%;
 }
+.contacts__title--en::before {
+  left: 37px;
+}
 @keyframes cuffs {
   0% {
   }
@@ -986,6 +993,11 @@ p {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.contacts__title--en::after {
+  left: 68px;
+  top: 67.8%;
+}
+
 .contacts__title--right {
   display: block;
   text-align: right;

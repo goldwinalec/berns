@@ -209,9 +209,10 @@ const openGallery = function () {
     />
   </div>
   <div class="swiper-scrollbar"></div>
-  <div class="wrapper__close"></div>
+  <div class="wrapper__close btn"></div>
 </div>
 `;
+      customCursor();
       body.insertAdjacentHTML('afterbegin', gallery);
       html.classList.add('disable');
       const closeBtn = document.querySelector('.wrapper__close');
@@ -294,15 +295,42 @@ const init = function () {
   openGallery();
 };
 
-// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-//   anchor.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     document.querySelector(this.getAttribute('href')).scrollIntoView({
-//       behavior: 'smooth',
-//     });
-//   });
-// });
+const customCursor = function () {
+  const images = document.querySelectorAll('.gallery__img');
+  const links = document.querySelectorAll('a');
+  const buttons = document.querySelectorAll('.btn');
+  const cursor = document.querySelector('.cursor');
+  document.addEventListener('mousemove', (e) => {
+    cursor.setAttribute('style', `top: ${e.clientY}px; left: ${e.clientX}px`);
+  });
+  images.forEach((image) => {
+    image.addEventListener('mouseover', () => {
+      cursor.classList.add('cursor--active');
+    });
+    image.addEventListener('mouseout', () => {
+      cursor.classList.remove('cursor--active');
+    });
+  });
+  links.forEach((link) => {
+    link.addEventListener('mouseover', () => {
+      cursor.classList.add('cursor--active');
+    });
+    link.addEventListener('mouseout', () => {
+      cursor.classList.remove('cursor--active');
+    });
+  });
+  buttons.forEach((button) => {
+    button.addEventListener('mouseover', () => {
+      cursor.classList.add('cursor--active');
+    });
+    button.addEventListener('mouseout', () => {
+      cursor.classList.remove('cursor--active');
+    });
+  });
+};
 
 window.onload = function () {
   init();
 };
+
+customCursor();

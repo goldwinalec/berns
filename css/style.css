@@ -113,7 +113,12 @@ html.disable {
   overflow-y: hidden;
 }
 
+a {
+  cursor: none;
+}
+
 body {
+  cursor: none;
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -125,6 +130,43 @@ body {
   color: #fff;
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
+}
+
+.cursor {
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  z-index: 21;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.cursor--active {
+  width: 40px;
+  height: 40px;
+}
+
+.gallery__img--wrapper {
+  position: relative;
+}
+
+.gallery__img--wrapper::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(farthest-side, #fff 95%, transparent 100%) calc(var(--x) - 0.75em) calc(var(--y) - 0.75em)/2.5em 2.5em fixed no-repeat;
+  mix-blend-mode: difference;
 }
 
 body.white {
@@ -371,7 +413,6 @@ p {
   position: absolute;
   top: 29px;
   right: -47px;
-  cursor: pointer;
   overflow: visible;
 }
 
@@ -584,7 +625,6 @@ p {
   transition: opacity 0.5s linear, -webkit-transform 0.7s linear;
   transition: opacity 0.5s linear, transform 0.7s linear;
   transition: opacity 0.5s linear, transform 0.7s linear, -webkit-transform 0.7s linear;
-  cursor: pointer;
   opacity: 0;
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
@@ -595,23 +635,6 @@ p {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-}
-
-.gallery__img-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-
-.gallery__img-wrapper:hover::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("/images/icons/line.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
 .gallery-1__img--1 {
@@ -754,7 +777,6 @@ p {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   z-index: 2;
-  cursor: pointer;
 }
 
 .gallery-1__img--5 {
@@ -1856,7 +1878,6 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
-  cursor: pointer;
 }
 
 .gallery__wrapper {
@@ -1899,7 +1920,6 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  cursor: pointer;
   z-index: 20;
 }
 

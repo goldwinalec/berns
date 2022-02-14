@@ -1933,7 +1933,6 @@ p {
   top: 0;
   bottom: 0;
   right: 0;
-  display: none;
   width: 100%;
   height: 100%;
   padding: 0 50px;
@@ -1942,24 +1941,26 @@ p {
           animation: opacity-wrapper 0.5s ease;
   -webkit-transition: background 0.5s ease;
   transition: background 0.5s ease;
-  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .gallery__wrapper--visible {
-  display: block;
+  opacity: 1;
+  z-index: 5;
+  visibility: visible;
 }
 
-.wrapper__img {
+.swiper-slide {
   margin-top: auto;
   margin-bottom: auto;
   height: 85%;
   width: auto;
-  display: block;
-  z-index: 5;
 }
 
-.wrapper__img + .wrapper__img {
-  margin-left: 100px;
+.wrapper__img {
+  width: auto;
+  height: 100%;
 }
 
 .wrapper__close {

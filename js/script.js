@@ -94,7 +94,11 @@ const lazyLoad = function () {
       { rootMargin: '0px 0px 500px 0px' }
     );
     document.querySelectorAll('img').forEach((img) => {
-      observer.observe(img);
+      if (img.classList.contains('wrapper__img')) {
+        return;
+      } else {
+        observer.observe(img);
+      }
     });
   }
 };
@@ -132,18 +136,6 @@ const playVideo = function () {
   });
 };
 
-const swiperGallery = new Swiper('.gallery__wrapper', {
-  slidesPerView: 'auto',
-  freeMode: true,
-  mousewheel: {
-    releaseOnEdges: true,
-  },
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    draggable: true,
-  },
-});
-
 const openGallery = function () {
   const imageBtns = document.querySelectorAll('.gallery__img');
   const closeBtn = document.querySelector('.wrapper__close');
@@ -152,6 +144,20 @@ const openGallery = function () {
     btn.addEventListener('click', function () {
       wrapper.classList.add('gallery__wrapper--visible');
       html.classList.add('disable');
+      const swiperGallery = new Swiper('.gallery__wrapper', {
+        slidesPerView: 'auto',
+        initialSlide: 0,
+        freeMode: true,
+        spaceBetween: 100,
+        updateOnImagesReady: true,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        },
+      });
       const generateColor = function () {
         const colors = [
           '140624',
@@ -185,6 +191,7 @@ const openGallery = function () {
       };
       observeBackgound();
       closeBtn.addEventListener('click', function () {
+        swiperGallery.destroy();
         html.classList.remove('disable');
         wrapper.classList.remove('gallery__wrapper--visible');
       });

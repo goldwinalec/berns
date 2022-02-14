@@ -303,10 +303,13 @@ const customCursor = function () {
   const cursorFollower = document.querySelector('.cursor-follower');
 
   const movingCursor = (e) => {
-    cursor.setAttribute('style', `top: ${e.clientY}px; left: ${e.clientX}px`);
+    cursor.setAttribute(
+      'style',
+      `top: ${e.clientY}px; left: ${e.clientX}px; display: block;`
+    );
     cursorFollower.setAttribute(
       'style',
-      `top: ${e.clientY}px; left: ${e.clientX}px`
+      `top: ${e.clientY}px; left: ${e.clientX}px; display: block;`
     );
   };
   document.addEventListener('mousemove', movingCursor);

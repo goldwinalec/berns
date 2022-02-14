@@ -133,6 +133,7 @@ body {
 }
 
 .cursor {
+  display: none;
   position: fixed;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -148,6 +149,7 @@ body {
 }
 
 .cursor-follower {
+  display: none;
   position: fixed;
   content: '';
   -webkit-transform: translate(-50%, -50%);

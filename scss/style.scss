@@ -29,6 +29,7 @@ body {
   transition: background 1s ease;
 }
 .cursor {
+  display: none;
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -41,6 +42,7 @@ body {
   transition: all 0.15s linear;
 }
 .cursor-follower {
+  display: none;
   position: fixed;
   content: '';
   transform: translate(-50%, -50%);

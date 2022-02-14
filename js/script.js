@@ -330,6 +330,15 @@ const customCursor = function () {
   });
 };
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
+
 window.onload = function () {
   init();
 };

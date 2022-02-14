@@ -1175,7 +1175,6 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
-  // cursor: pointer;
 }
 .gallery__wrapper {
   position: fixed;
@@ -1183,6 +1182,7 @@ p {
   top: 0;
   bottom: 0;
   right: 0;
+  display: none;
   width: 100%;
   height: 100%;
   padding: 0 50px;
@@ -1190,6 +1190,9 @@ p {
   animation: opacity-wrapper 0.5s ease;
   transition: background 0.5s ease;
   z-index: 5;
+}
+.gallery__wrapper--visible {
+  display: block;
 }
 .wrapper__img {
   margin-top: auto;
@@ -1212,7 +1215,6 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  // cursor: pointer;
   z-index: 20;
 }
 @import 'media';

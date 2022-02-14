@@ -132,91 +132,26 @@ const playVideo = function () {
   });
 };
 
+const swiperGallery = new Swiper('.gallery__wrapper', {
+  slidesPerView: 'auto',
+  freeMode: true,
+  mousewheel: {
+    releaseOnEdges: true,
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+});
+
 const openGallery = function () {
   const imageBtns = document.querySelectorAll('.gallery__img');
+  const closeBtn = document.querySelector('.wrapper__close');
+  const wrapper = document.querySelector('.gallery__wrapper');
   imageBtns.forEach((btn) => {
     btn.addEventListener('click', function () {
-      const gallery = `<div class="gallery__wrapper wrapper">
-  <div class="swiper-wrapper">
-    <img
-      src="/images/content/gallery-img-1.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-2.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-3.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-4.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-5.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-6.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-7.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-8.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-9.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-10.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-11.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-12.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-13.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-14.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-15.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-16.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    /><img
-      src="/images/content/gallery-img-17.jpg"
-      alt=""
-      class="wrapper__img swiper-slide"
-    />
-  </div>
-  <div class="swiper-scrollbar"></div>
-  <div class="wrapper__close btn"></div>
-</div>
-`;
-      customCursor();
-      body.insertAdjacentHTML('afterbegin', gallery);
+      wrapper.classList.add('gallery__wrapper--visible');
       html.classList.add('disable');
-      const closeBtn = document.querySelector('.wrapper__close');
-      const wrapper = document.querySelector('.gallery__wrapper');
       const generateColor = function () {
         const colors = [
           '140624',
@@ -234,7 +169,6 @@ const openGallery = function () {
           rootMargin: '0px',
           threshold: 0,
         };
-
         const observeCallback = function (entries, observer) {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -250,20 +184,9 @@ const openGallery = function () {
         });
       };
       observeBackgound();
-      const swiperGallery = new Swiper('.gallery__wrapper', {
-        slidesPerView: 'auto',
-        freeMode: true,
-        mousewheel: {
-          releaseOnEdges: true,
-        },
-        scrollbar: {
-          el: '.swiper-scrollbar',
-          draggable: true,
-        },
-      });
       closeBtn.addEventListener('click', function () {
         html.classList.remove('disable');
-        wrapper.remove();
+        wrapper.classList.remove('gallery__wrapper--visible');
       });
     });
   });

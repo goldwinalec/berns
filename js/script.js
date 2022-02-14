@@ -133,7 +133,7 @@ const playVideo = function () {
 };
 
 const openGallery = function () {
-  const imageBtns = document.querySelectorAll('.gallery__img-wrapper');
+  const imageBtns = document.querySelectorAll('.gallery__img');
   imageBtns.forEach((btn) => {
     btn.addEventListener('click', function () {
       const gallery = `<div class="gallery__wrapper wrapper">
@@ -300,31 +300,29 @@ const customCursor = function () {
   const links = document.querySelectorAll('a');
   const buttons = document.querySelectorAll('.btn');
   const cursor = document.querySelector('.cursor');
-  document.addEventListener('mousemove', (e) => {
+  const cursorFollower = document.querySelector('.cursor-follower');
+
+  const movingCursor = (e) => {
     cursor.setAttribute('style', `top: ${e.clientY}px; left: ${e.clientX}px`);
+    cursorFollower.setAttribute(
+      'style',
+      `top: ${e.clientY}px; left: ${e.clientX}px`
+    );
+  };
+  document.addEventListener('mousemove', movingCursor);
+  document.addEventListener('touchmove', function () {
+    cursor.setAttribute('style', `display: none;`);
+    cursorFollower.setAttribute('style', `display: none;`);
   });
-  images.forEach((image) => {
-    image.addEventListener('mouseover', () => {
+  const elements = [...images, ...links, ...buttons];
+  elements.forEach((element) => {
+    element.addEventListener('mouseover', () => {
       cursor.classList.add('cursor--active');
+      cursorFollower.classList.add('cursor--active');
     });
-    image.addEventListener('mouseout', () => {
+    element.addEventListener('mouseout', () => {
       cursor.classList.remove('cursor--active');
-    });
-  });
-  links.forEach((link) => {
-    link.addEventListener('mouseover', () => {
-      cursor.classList.add('cursor--active');
-    });
-    link.addEventListener('mouseout', () => {
-      cursor.classList.remove('cursor--active');
-    });
-  });
-  buttons.forEach((button) => {
-    button.addEventListener('mouseover', () => {
-      cursor.classList.add('cursor--active');
-    });
-    button.addEventListener('mouseout', () => {
-      cursor.classList.remove('cursor--active');
+      cursorFollower.classList.remove('cursor--active');
     });
   });
 };

@@ -104,36 +104,41 @@ const lazyLoad = function () {
 };
 
 const playVideo = function () {
-  const openVideoBtn = document.querySelector('.hero__play-btn');
-  const openVideo2Btn = document.querySelector('.gallery-1__video-btn');
-  openVideoBtn.addEventListener('click', function () {
-    const video = `<div class="video__wrapper">
+  const openVideoBtns = document.querySelectorAll('#hero__play-btn');
+  const openVideo2Btns = document.querySelectorAll('#gallery-1__video-btn');
+
+  openVideoBtns.forEach((btn) =>
+    btn.addEventListener('click', function () {
+      const video = `<div class="video__wrapper">
     <video src="/videos/video.mp4" class="video" preload="none" controls autoplay></video>
     <div class="overlay"><div>
     </div>`;
-    body.insertAdjacentHTML('afterbegin', video);
-    html.classList.add('disable');
-    const overlay = document.querySelector('.overlay');
-    const wrapper = document.querySelector('.video__wrapper');
-    overlay.addEventListener('click', function () {
-      html.classList.remove('disable');
-      wrapper.remove();
-    });
-  });
-  openVideo2Btn.addEventListener('click', function () {
-    const video = `<div class="video__wrapper">
+      body.insertAdjacentHTML('afterbegin', video);
+      html.classList.add('disable');
+      const overlay = document.querySelector('.overlay');
+      const wrapper = document.querySelector('.video__wrapper');
+      overlay.addEventListener('click', function () {
+        html.classList.remove('disable');
+        wrapper.remove();
+      });
+    })
+  );
+  openVideo2Btns.forEach((btn) =>
+    btn.addEventListener('click', function () {
+      const video = `<div class="video__wrapper">
     <video src="/videos/video-2.mp4" class="video" preload="none" poster="/images/content/poster.jpg" controls autoplay></video>
     <div class="overlay"><div>
     </div>`;
-    body.insertAdjacentHTML('afterbegin', video);
-    html.classList.add('disable');
-    const overlay = document.querySelector('.overlay');
-    const wrapper = document.querySelector('.video__wrapper');
-    overlay.addEventListener('click', function () {
-      html.classList.remove('disable');
-      wrapper.remove();
-    });
-  });
+      body.insertAdjacentHTML('afterbegin', video);
+      html.classList.add('disable');
+      const overlay = document.querySelector('.overlay');
+      const wrapper = document.querySelector('.video__wrapper');
+      overlay.addEventListener('click', function () {
+        html.classList.remove('disable');
+        wrapper.remove();
+      });
+    })
+  );
 };
 
 const openGallery = function () {

@@ -481,17 +481,17 @@ p {
           transform-origin: 54% 45%;
 }
 
-.hero__play-btn:hover .play-line-1 {
+.play-line-1 {
   -webkit-animation: play-line-1 2s linear infinite;
           animation: play-line-1 2s linear infinite;
 }
 
-.hero__play-btn:hover .play-line-2 {
+.play-line-2 {
   -webkit-animation: play-line-2 2s linear infinite;
           animation: play-line-2 2s linear infinite;
 }
 
-.hero__play-btn:hover .play-line-3 {
+.play-line-3 {
   -webkit-animation: play-line-3 2s linear infinite;
           animation: play-line-3 2s linear infinite;
 }
@@ -1937,18 +1937,16 @@ p {
   height: 100%;
   padding: 0 50px;
   background-color: #111111;
-  -webkit-animation: opacity-wrapper 0.5s ease;
-          animation: opacity-wrapper 0.5s ease;
-  -webkit-transition: background 0.5s ease;
-  transition: background 0.5s ease;
+  -webkit-transition: background 0.5s ease, opacity 0.3s ease;
+  transition: background 0.5s ease, opacity 0.3s ease;
   opacity: 0;
   visibility: hidden;
 }
 
 .gallery__wrapper--visible {
   opacity: 1;
-  z-index: 5;
   visibility: visible;
+  z-index: 5;
 }
 
 .swiper-slide {
